@@ -1,24 +1,41 @@
-SELECT ArtistName, YearEstablished
-FROM Artist
-WHERE YearEstablished > 1970
-AND YearEstablished < 2000
-ORDER BY YearEstablished DESC
-;
-
-SELECT a.Title,
-			a.AlbumLength,
-			a.Label,
-			ar.ArtistName,
-			ar.YearEstablished,
-			g.Label
-FROM Album a
-JOIN Artist ar ON a.ArtistId = ar.ArtistId
-JOIN Genre g ON a.GenreId = g.GenreId
-;
-
 SELECT * 
 FROM Song s
 JOIN Album al ON al.AlbumId = s.AlbumId
 JOIN Artist ar ON ar.ArtistId = s.ArtistId
 JOIN Genre g ON g.GenreId = s.GenreId
+;
+
+INSERT INTO Artist
+(ArtistName, YearEstablished)
+VALUES
+("Creed", 1993)
+;
+--this is how to comment out
+/* or this works too */
+
+SELECT * FROM Artist
+;
+
+DELETE FROM Artist WHERE ArtistId = 28
+;
+/*
+UPDATE Artist
+	SET ArtistName = "Creed"
+	WHERE ArtistId = 29
+	;*/
+	
+SELECT * 
+From Genre
+;
+
+INSERT INTO Artist
+(ArtistName)
+VALUES 
+("Metallica")
+;
+
+INSERT INTO Album
+(ArtistName, AlbumTitle)
+VALUES 
+("Metallica", "Ride The LIghtning")
 ;
